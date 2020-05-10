@@ -58,7 +58,7 @@ harga INT NOT NULL);
 
 CREATE TABLE compatibility
 (id_tipe INT REFERENCES tipe(id_tipe) NOT NULL,
-id_motor INT REFERENCES motor(id_motor)) NOT NULL;
+id_motor INT REFERENCES motor(id_motor) NOT NULL);
 
 CREATE TABLE riwayat_jual
 (id_transaksi INT DEFAULT txid_current() NOT NULL,

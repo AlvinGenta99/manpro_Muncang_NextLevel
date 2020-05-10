@@ -1,0 +1,16 @@
+CREATE SEQUENCE recycle_seq
+INCREMENT 1
+MINVALUE 1
+MAXVALUE 99999
+START 1
+CACHE 1;
+
+CREATE TABLE recycle_identifier
+(id_recycle TEXT NOT NULL DEFAULT 'RCI-'||NEXTVAL('recycle_seq'::regclass)::TEXT PRIMARY KEY,
+id_tipe INT REFERENCES tipe(id_tipe) NOT NULL,
+recycle_count INT DEFAULT 0 NOT NULL);
+
+\COPY recycle_identifier (id_tipe,recycle_count) FROM 'C:\recycle_identifier.csv' DELIMITER ',' CSV HEADER;
+
+CREATE VIEW view_recycle AS
+SELECT id_recycle, nama_tipe, recycle_count FROM recycle_identifier NATURAL JOIN tipe;

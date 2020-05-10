@@ -56,13 +56,13 @@ require_once 'config.php';
   </a>
 </nav>
 
-<form action="construction.html" class="search-box" id = "right-panel-link" method="post">
+<form action="search_recycle.php" class="search-box" id = "right-panel-link" method="post">
   <div class="form-row">
 	  <div class"col">
 		  <form class="dropdown" id="right-panel-link" action="test_filter.php" method="post">
 			<select class="form-control" name="dd_opt">
             <option value="id_recycle">Recycle ID</option>
-			<option value="nama_tipe">Tipe</option>
+			      <option value="nama_tipe">Tipe</option>
             <option value="recycle_count">Count</option>
 			</select>
 		</div>
@@ -89,7 +89,7 @@ require_once 'config.php';
 		<tr>
 			<th>Recycle ID</th>
 			<th>Tipe</th>
-            <th>Count</th>                                           
+      <th>Count</th>                                           
 		</tr>
 	</thead>
 

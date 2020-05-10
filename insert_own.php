@@ -6,6 +6,7 @@ $jenis = pg_query("SELECT * FROM jenis ORDER BY nama_jenis ASC");
 $tipe = pg_query("SELECT * FROM tipe ORDER BY nama_tipe ASC");
 $tipe2 = pg_query("SELECT * FROM tipe ORDER BY nama_tipe ASC");
 $tipe3 = pg_query("SELECT * FROM tipe ORDER BY nama_tipe ASC");
+$tipe4 = pg_query("SELECT * FROM tipe ORDER BY nama_tipe ASC");
 $merk = pg_query("SELECT * FROM merk ORDER BY nama_merk ASC");
 $motor = pg_query("SELECT * FROM motor ORDER BY nama_motor ASC");
 $result = pg_query($sql);
@@ -78,6 +79,9 @@ $result = pg_query($sql);
    <a class="nav-link mx-auto" data-toggle="pill" href="#tambah_compat">Tambah Compatibility</a>
   </li>
   <li class="nav-item">
+   <a class="nav-link mx-auto" data-toggle="pill" href="#tambah_recycle">Tambah Recycle ID</a>
+  </li>
+  <li class="nav-item">
    <a class="nav-link mx-auto" data-toggle="pill" href="#update_stock">Tambah Stock</a>
   </li>
     </ul>
@@ -133,6 +137,13 @@ $result = pg_query($sql);
                 <div class="md-form">
                 <label for="spStock">Stock Awal:</label>
                 <input name = "spStock" type="Number" class="form-control mb-3 col-5" placeholder="Stock Awal...">
+                </div>
+                </center>
+
+                <center>
+                <div class="md-form">
+                <label for="spRecycle">Recycle ID:</label>
+                <input name = "spRecycle" type="Text" class="form-control mb-3 col-5" placeholder="Recycle ID (Bila Ada)...">
                 </div>
                 </center>
 
@@ -231,6 +242,34 @@ $result = pg_query($sql);
           ?>
           </div>
       </center>
+
+    <center><input type="submit" class="btn btn-primary btn-lg" value="Submit"></center>
+    </form> 
+  </div>
+
+  <div id="tambah_recycle" class="container tab-pane fade"><br>
+    <center><h4>Tambah Recycle ID Baru Untuk Sparepart<h4></center><br>
+      <form action = "insert_recycle.php" class = "text-center" method = "post">
+      <center>
+        <div class="md-form">
+          <label>Tipe Spareparts:</label>
+          <?php 
+            echo "<select name='comTipe2' class='form-control mb-3 col-5' placeholder='Pilih Tipe'>";
+            while ($rowt = pg_fetch_array($tipe4)) 
+            {
+              echo "<option value='" . $rowt['id_tipe'] . "'>" . $rowt['nama_tipe'] . "</option>";
+            }  
+            echo "</select>"; 
+          ?>
+          </div>
+      </center>
+
+      <center>
+          <div class="md-form">
+            <label for="iRecycleCount">Recycle Count (Bila ada/diketahui, tanpa [,] atau [.])</label>
+            <input name = "iRecycleCount" type="text" class="form-control mb-3 col-5" placeholder="Recycle Count">
+          </div>
+         </center>
 
     <center><input type="submit" class="btn btn-primary btn-lg" value="Submit"></center>
     </form> 
