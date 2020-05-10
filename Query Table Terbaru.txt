@@ -1,3 +1,10 @@
+CREATE SEQUENCE recycle_seq
+INCREMENT 1
+MINVALUE 1
+MAXVALUE 99999
+START 1
+CACHE 1;
+
 CREATE SEQUENCE id_tipe
 INCREMENT 1
 MINVALUE 1
@@ -79,14 +86,20 @@ password VARCHAR(255) NOT NULL);
 INSERT INTO login (username,password) VALUES
 ('admin','912ec803b2ce49e4a541068d495ab570');
 
-\COPY tipe (nama_tipe) FROM 'C:\tipe.csv' DELIMITER ',' CSV HEADER;
-\COPY merk (nama_merk) FROM 'C:\merk.csv' DELIMITER ',' CSV HEADER;
-\COPY jenis (nama_jenis) FROM 'C:\jenis.csv' DELIMITER ',' CSV HEADER;
-\COPY motor (nama_motor) FROM 'C:\motor.csv' DELIMITER ',' CSV HEADER;
-\COPY spareparts FROM 'C:\spareparts.csv' DELIMITER ',' CSV HEADER;
-\COPY compatibility FROM 'C:\compatibility.csv' DELIMITER ',' CSV HEADER;
-\COPY riwayat_jual (id_tipe,jumlah) FROM 'C:\sales.csv' DELIMITER ',' CSV HEADER;
-\COPY riwayat_restock (id_tipe,jumlah) FROM 'C:\restock.csv' DELIMITER ',' CSV HEADER;
+CREATE TABLE recycle_identifier
+(id_recycle TEXT NOT NULL DEFAULT 'RCI-'||NEXTVAL('recycle_seq'::regclass)::TEXT PRIMARY KEY,
+id_tipe INT REFERENCES tipe(id_tipe) NOT NULL,
+recycle_count INT DEFAULT 0 NOT NULL);
+
+\COPY tipe (nama_tipe) FROM 'C:\xampp\htdocs\tipe.csv' DELIMITER ',' CSV HEADER;
+\COPY merk (nama_merk) FROM 'C:\xampp\htdocs\merk.csv' DELIMITER ',' CSV HEADER;
+\COPY jenis (nama_jenis) FROM 'C:\xampp\htdocs\jenis.csv' DELIMITER ',' CSV HEADER;
+\COPY motor (nama_motor) FROM 'C:\xampp\htdocs\motor.csv' DELIMITER ',' CSV HEADER;
+\COPY spareparts FROM 'C:\xampp\htdocs\spareparts.csv' DELIMITER ',' CSV HEADER;
+\COPY compatibility FROM 'C:\xampp\htdocs\compatibility.csv' DELIMITER ',' CSV HEADER;
+\COPY riwayat_jual (id_tipe,jumlah) FROM 'C:\xampp\htdocs\sales.csv' DELIMITER ',' CSV HEADER;
+\COPY riwayat_restock (id_tipe,jumlah) FROM 'C:\xampp\htdocs\restock.csv' DELIMITER ',' CSV HEADER;
+\COPY recycle_identifier (id_tipe,recycle_count) FROM 'C:\xampp\htdocs\recycle_identifier.csv' DELIMITER ',' CSV HEADER;
 
 CREATE OR REPLACE FUNCTION func_tipe()
 RETURNS TRIGGER AS
@@ -168,3 +181,6 @@ INNER JOIN merk ON spareparts.id_merk = merk.id_merk;
 CREATE VIEW preview_jual AS
 SELECT id_tipe, jenis.nama_jenis, merk.nama_merk, tipe.nama_tipe, stock, harga
 FROM spareparts NATURAL JOIN jenis NATURAL JOIN tipe NATURAL JOIN merk;
+
+CREATE VIEW view_recycle AS
+SELECT id_recycle, nama_tipe, recycle_count FROM recycle_identifier NATURAL JOIN tipe;
