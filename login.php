@@ -12,6 +12,7 @@
             </script>");
 
         }
+        
         else
         {    
             $username = $_POST['username'];
