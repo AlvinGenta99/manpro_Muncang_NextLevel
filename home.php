@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    <!-- 
+        Home Page Display, after user has logged in. Home to all main functions.
+
+        @author Mohammad Khairi Poerwo Satrio, Fadhillah Reza Putranto, Alvin Genta Pratama
+        @version 6.3.20 
+
+     -->
+
 <head>
 <style>
   #logout
@@ -11,6 +19,7 @@
   }
 
 </style>
+  	<!-- Link to BootStrap styles and JavaScirpt BootStrap Scripts -->
     <meta charset="utf-8">
     <title>Homepage Bengkel</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -23,6 +32,7 @@
     <br>
 </head>
 <body>
+	<!-- Header for the tab -->
 <center><h2 id="welcome">Welcome Back, Administrator</h2><center>
 <div class = "w3-container">
     <div class="card bg-dark text-white">
@@ -36,6 +46,7 @@
 
 <div class="container">
 
+<!-- Floating Active Menu for navigation, acts as parents to 'tab-content' class -->
 	<ul class="nav nav-pills justify-content-center" role="tablist">
 		<li class="nav-item">
 			<a class="nav-link active mx-auto" data-toggle="pill" href="#home_menu">Home</a>
@@ -51,8 +62,12 @@
 		</li>
 	</ul>
 
-
 	<div class="tab-content">
+
+		<!-- 
+			Child to the Parent Home.
+		    Mencakup List Spareparts, Merk Motor, List Motor, List Tipe, dan List jenis.
+		 -->
 		<div id="home_menu" class="container tab-pane active"><br>
 			<form class = "button">
 			<center><div class ="btn">
@@ -64,7 +79,11 @@
 			</div></center>
 			</form> 
 		</div>
-		
+	
+		<!-- 
+			Child to the Parent Update. 
+			Mencakup Add New Item dan Sale Today.
+		-->
 		<div id="update_menu" class="container tab-pane fade"><br>
 			<form class = "button">
 			  <center><div class ="btn">
@@ -73,7 +92,11 @@
 			  </div></center>
 			</form> 
 		</div>
-		
+
+		<!-- 
+			Child to the Parent Compatibility.
+			Mencakup Compatibility List 
+		-->		
 		<div id="compatibility_menu" class="container tab-pane fade"><br>
 			<form class = "button">
 				<center><div class ="btn">
@@ -82,6 +105,10 @@
 			</form> 
 		</div>
 
+		<!-- 
+			Child to the Parent Record.
+			Mencakup Riwayat Restock, Riwayat Penjualan, dan Recycle Log (Recyclops Integration).
+		 -->
 		<div id="record_menu" class="container tab-pane fade"><br>
 			<form class = "button">
 				<center><div class ="btn">
@@ -95,22 +122,13 @@
 	</div>
 </div>
 
-<b id="logout"><a href="logout.php" class="btn btn-secondary btn-lg"><font size='5'> <i class="fa fa-power-off" ></i> Log Out</font></a>
-
-
-
-<script>
-function openCity(cityName) {
-  var i;
-  var x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  document.getElementById(cityName).style.display = "block";  
-}
-</script>
-
-
+<!-- Button Logout -->
+<b id="logout">
+	<a href="logout.php" class="btn btn-secondary btn-lg">
+		<font size='5'>
+			<i class="fa fa-power-off" ></i> Log Out
+		</font>
+	</a>
 
 </body>
 </html>
