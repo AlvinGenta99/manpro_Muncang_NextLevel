@@ -1,7 +1,7 @@
 <?php
 require_once "config.php";
 $posted = false;
-$sql = "SELECT DISTINCT nama_motor FROM motor ORDER BY nama_motor ASC";
+$listMotor = "SELECT DISTINCT nama_motor FROM motor ORDER BY nama_motor ASC";
 $jenis = pg_query("SELECT * FROM jenis ORDER BY nama_jenis ASC");
 $tipe = pg_query("SELECT * FROM tipe ORDER BY nama_tipe ASC");
 $tipe2 = pg_query("SELECT * FROM tipe ORDER BY nama_tipe ASC");
@@ -9,7 +9,7 @@ $tipe3 = pg_query("SELECT * FROM tipe ORDER BY nama_tipe ASC");
 $tipe4 = pg_query("SELECT * FROM tipe ORDER BY nama_tipe ASC");
 $merk = pg_query("SELECT * FROM merk ORDER BY nama_merk ASC");
 $motor = pg_query("SELECT * FROM motor ORDER BY nama_motor ASC");
-$result = pg_query($sql);
+$result = pg_query($listMotor);
 
 ?>
 
@@ -294,16 +294,5 @@ $result = pg_query($sql);
  </div>
 </div>
 
-<script>
-function openCity(cityName) {
-  var i;
-  var x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  document.getElementById(cityName).style.display = "block";  
-}
-</script>
 </body>
-
 </HTML>

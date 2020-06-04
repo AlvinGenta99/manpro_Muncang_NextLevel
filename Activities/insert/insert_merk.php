@@ -8,9 +8,9 @@ if($_SERVER["REQUEST_METHOD"] = "POST"){
     try 
     {   
         $posted = true;
-        $namamerk = $_POST['iNamaMerk'];
+        $nama_merk = $_POST['iNamaMerk'];
         
-        $new_merk = "INSERT INTO merk (nama_merk) VALUES ('$namamerk')";
+        $new_merk = "INSERT INTO merk (nama_merk) VALUES ('$nama_merk')";
         pg_query($new_merk);
 
       

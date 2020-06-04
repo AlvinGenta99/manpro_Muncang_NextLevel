@@ -1,9 +1,15 @@
 <?php
+/* Search function and display for Sale confirmation.
+ * This page is used to confirm a sale that is being made, by Cross-checking the selectd Item.
+ * 
+ * @author Mohammad Khairi Poerwo Satrio, Fadhillah Reza Putranto, Alvin Genta Pratama
+ * @version 6.3.20
+*/
 require_once 'config.php';
 session_start();
-$number = count($_POST['iid']);
-$id = $_POST['iid'];
-$jumlah = $_POST['ijumlah'];
+$number = count($_POST['iId']);
+$id = $_POST['iId'];
+$jumlah = $_POST['iJumlah'];
 $query4 = "INSERT INTO riwayat_jual (id_tipe,jumlah) VALUES ";
 pg_query("BEGIN") or die("Could not start transaction\n");
 
@@ -52,7 +58,7 @@ if ($number > 1)
             echo ("Nilai tidak dimasukkan. HARAP CEK KEMBALI!");
             exit();
         }
-        if (trim($_POST["iid"][$i] != ''))
+        if (trim($_POST["iId"][$i] != ''))
         {
 
             $query1 = "UPDATE spareparts SET stock = stock - $jumlah[$i] WHERE id_tipe = $id[$i]";

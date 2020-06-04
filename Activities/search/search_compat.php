@@ -1,4 +1,11 @@
 <?php
+/* Search function and display for Compatibility Page.
+ * Details are taken from PostgreSQL compatibility_view View.
+ * 
+ * @author Mohammad Khairi Poerwo Satrio, Fadhillah Reza Putranto, Alvin Genta Pratama
+ * @version 6.3.20
+*/
+
 session_start();
 if (isset($_SESSION['login_user']))
 { ?>
@@ -152,4 +159,3 @@ else
 {
     header("Location: index.php");
 }
-

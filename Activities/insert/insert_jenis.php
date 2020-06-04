@@ -2,15 +2,15 @@
 require_once "config.php";
 require_once "insert_own.php";
 $posted = false;
-$jenis = $tipe = $namajenis = '';
+$jenis = $tipe = $namaJenis = '';
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     try 
     {   
         $posted = true;
-        $namajenis = $_POST["iNamaJenis"];
+        $namaJenis = $_POST["iNamaJenis"];
         
-        $new_jenis = "INSERT INTO jenis (nama_jenis) VALUES ('$namajenis')";
+        $new_jenis = "INSERT INTO jenis (nama_jenis) VALUES ('$namaJenis')";
         pg_query($new_jenis);
 
       

@@ -2,16 +2,16 @@
 require_once "config.php";
 require_once "insert_own.php";
 $posted = false;
-$jenis = $tipe = $namatipe = '';
+$jenis = $tipe = $namaTipe = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     try
     {
         $posted = true;
-        $namatipe = $_POST["iNamaTipe"];
+        $namaTipe = $_POST["iNamaTipe"];
 
-        $new_tipe = "INSERT INTO tipe (nama_tipe) VALUES ('$namatipe')";
+        $new_tipe = "INSERT INTO tipe (nama_tipe) VALUES ('$namaTipe')";
         pg_query($new_tipe);
 
         echo ("<script>

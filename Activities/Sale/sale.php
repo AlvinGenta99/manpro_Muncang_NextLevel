@@ -44,8 +44,8 @@ if (isset($_SESSION['login_user']))
 					<div class="table-responsive">
 						<table class="table table-bordered" id="dynamic_field">
 							<tr>
-								<td><input type="number" name="iid[]" placeholder="Masukan ID barang" class="form-control name_list" /></td>
-								<td><input type="number" name="ijumlah[]" placeholder="Masukan Jumlah yang Dijual" class="form-control name_list" /></td>
+								<td><input type="number" name="iId[]" placeholder="Masukan ID barang" class="form-control name_list" /></td>
+								<td><input type="number" name="iJumlah[]" placeholder="Masukan Jumlah yang Dijual" class="form-control name_list" /></td>
 								<td><button type="button" name="add" id="add" class="btn btn-success">Add More</button></td>
 							</tr>
 						</table>
@@ -63,7 +63,7 @@ $(document).ready(function(){
 		i++;
 		$('#dynamic_field').append
 		(
-			'<tr id="row'+i+'"><td><input type="number" name="iid[]" placeholder="Masukan ID barang" class="form-control name_list" /></td></td><td><input type="number" name="ijumlah[]" placeholder="Masukan Jumlah yang Dijual" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>'
+			'<tr id="row'+i+'"><td><input type="number" name="iId[]" placeholder="Masukan ID barang" class="form-control name_list" /></td></td><td><input type="number" name="iJumlah[]" placeholder="Masukan Jumlah yang Dijual" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>'
 		);
 	});
 	

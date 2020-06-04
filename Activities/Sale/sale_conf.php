@@ -1,7 +1,13 @@
 <?php
+/* Search function and display for Sale confirmation.
+ * This page is used to confirm a sale that is being made, by Cross-checking the selectd Item.
+ * 
+ * @author Mohammad Khairi Poerwo Satrio, Fadhillah Reza Putranto, Alvin Genta Pratama
+ * @version 6.3.20
+*/
 require_once "config.php";
 @session_start();
-$id = $_POST['iid'];
+$id = $_POST['iId'];
 $jumlah = $_POST['iJumlah'];
 $_SESSION['id'] = $id;
 $_SESSION['jumlah'] = $jumlah;
