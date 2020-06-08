@@ -70,7 +70,7 @@ $(document).ready(function(){
 		i++;
 		$('#dynamic_field').append
 		(
-			'<tr id="row'+i+'"><td><input type="number" name="iId[]" placeholder="Masukan ID barang" class="form-control name_list" /></td></td><td><input type="number" name="iJumlah[]" placeholder="Masukan Jumlah yang Dijual" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>'
+			'<tr id="row'+i+'"><td><input type="number" name="iId[]" placeholder="Masukan ID Tipe barang" class="form-control name_list" /></td></td><td><input type="number" name="iJumlah[]" placeholder="Masukan Jumlah yang Dijual" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>'
 		);
 	});
 	

@@ -72,7 +72,7 @@
 			<form class = "button">
 			<center><div class ="btn">
 			<a href="view_list.php" class="btn btn-dark btn-lg"><font size='5'>View List Spareparts</font></a><br><br>
-        	<a href="view_merk.php" class="btn btn-dark btn-lg"><font size='5'>View Merk Motor</font></a><br><br>
+        	<a href="view_merk.php" class="btn btn-dark btn-lg"><font size='5'>View Merk Spareparts</font></a><br><br>
 			<a href="view_motor.php" class="btn btn-dark btn-lg"><font size='5'>View List Motor</font></a><br><br>  
 			<a href="view_tipe.php" class="btn btn-dark btn-lg"><font size='5'>View List Tipe</font></a><br><br> 
 			<a href="view_jenis.php" class="btn btn-dark btn-lg"><font size='5'>View List Jenis</font></a><br><br> 
