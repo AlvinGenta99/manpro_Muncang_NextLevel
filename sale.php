@@ -37,7 +37,7 @@ if (isset($_SESSION['login_user']))
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
- <!   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -51,7 +51,7 @@ if (isset($_SESSION['login_user']))
 					<div class="table-responsive">
 						<table class="table table-bordered" id="dynamic_field">
 							<tr>
-								<td><input pattern="[0-9]" type="number" name="iId[]" placeholder="Masukan ID barang" class="form-control name_list" /></td>
+								<td><input pattern="[0-9]" type="number" name="iId[]" placeholder="Masukan ID Tipe Barang" class="form-control name_list" /></td>
 								<td><input pattern="[0-9]" type="number" name="iJumlah[]" placeholder="Masukan Jumlah yang Dijual" class="form-control name_list" /></td>
 								<td><button type="button" name="add" id="add" class="btn btn-success">Add More</button></td>
 							</tr>
