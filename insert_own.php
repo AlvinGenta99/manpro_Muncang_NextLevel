@@ -187,7 +187,7 @@ $result = pg_query($listMotor);
         <center>
           <div class="md-form">
             <label for="iNamaMerk">Nama Merk:</label>
-            <input name = 'iNamaMerk' type="text" class="form-control mb-3 col-5" placeholder="Nama Merk....">
+            <input name = "iNamaMerk" type="text" class="form-control mb-3 col-5" placeholder="Nama Merk....">
           </div>
          </center>
     <center><input type="submit" class="btn btn-primary btn-lg" value="Submit"></center>

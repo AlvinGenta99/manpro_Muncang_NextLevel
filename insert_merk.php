@@ -6,6 +6,7 @@
  * @version 6.3.20
  */
 $posted = false;
+$new_merk = '';
 require_once "config.php";
 require_once "insert_own.php";
 
